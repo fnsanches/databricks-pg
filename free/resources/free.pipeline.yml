@@ -1,0 +1,13 @@
+# The main pipeline for free
+resources:
+  pipelines:
+    free_pipeline:
+      name: free_pipeline
+      catalog: workspace
+      schema: free_${bundle.target}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src
