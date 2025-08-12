@@ -1,0 +1,18 @@
+resources:
+  jobs:
+    DataIngestionFakeCardData:
+      name: DataIngestionFakeCardData
+      schedule:
+        quartz_cron_expression: 45 0/15 * * * ?
+        timezone_id: UTC
+        pause_status: PAUSED
+      tasks:
+        - task_key: DataIngestionFakeData
+          notebook_task:
+            notebook_path: /Workspace/Users/felinobre100@gmail.com/sandbox/Fake Transactions
+              Data Ingestion with PySpark
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: STANDARD
+
